@@ -1,0 +1,83 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="mainpage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="tabs.css">
+<title>修改用户信息</title>
+</head>
+<body>
+<div id="content">
+<script language="javascript" type="text/javascript">
+function validateform(){
+	if(checkUserName() && genderCheck()) 
+	   return true;
+	 else
+	   return false;
+}
+
+function checkUserName(){  
+var fname = document.userfrm.fname.value;
+var lname = document.userfrm.lname.value;
+// <!--**********Found*********-->
+if(________.length == 0){
+	alert("“名字”不能为空！");
+	document.userfrm.fname.focus();
+	return false
+}
+// <!--**********Found*********-->
+if(________.length == 0){
+	alert("“姓氏”不能为空！");
+	document.userfrm.lname.focus();
+	return false;
+	}
+return true;
+} 
+
+function genderCheck(){
+var usergen = document.userfrm.gen.length;
+	for(i=0;i<usergen;i++){
+		if(document.userfrm.gen[i].checked){
+		return true;
+		}
+		if (i==usergen-1){
+		alert("请选择性别");
+		return false;
+		}
+	}
+	return true;
+}
+</script>
+<table width="300" border="0" align="center">
+  <tbody><tr>
+    <td height="75"><h2>修改用户信息</h2></td>
+    </tr>
+</tbody></table>
+<table width="300" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#99CCFF">
+	<!--**********Found*********-->
+ <form name="userfrm" method="post" action="a14-2.html" ________="return validateform()">
+  <tbody><tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#FBE7FF">名字：</td>
+    <td width="507" align="left" bordercolor="#E7E3E7"><input name="fname" type="text" class="register_textBroader" id="fname" size="24"></td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#FBE7FF">姓氏：</td>
+    <td align="left" bordercolor="#E7E3E7"><input name="lname" type="text" class="register_textBroader" id="lname" size="24"></td>
+  </tr> 
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#FBE7FF">性别：</td>
+    <td align="left" bordercolor="#E7E3E7">
+		<input name="gen" type="radio" value="男">
+	       <img src="Male.gif" width="23" height="21">男&nbsp; 
+	    <input name="gen" type="radio" value="女" class="input">
+	       <img src="Female.gif" width="23" height="21">女
+    </td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" height="35" align="right" bgcolor="#FBE7FF">
+        <input type="reset" name="Reset" value=" 重   填 "></td>
+    <td height="35" align="left" bordercolor="#E7E3E7">
+		<input type="submit" name="Button" value=" 提   交 ">
+	</td>
+  </tr>
+</tbody></form></table>
+</div>
+</body></html>

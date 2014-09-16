@@ -1,0 +1,32 @@
+﻿<html>
+<body>
+<style>
+#idDiv{width:80%;height:60px;background-color:buttonshadow;padding:6px;}
+</style>
+
+<script>
+function rdl_change(e){
+var oDiv=document.all("idDiv");
+with (document.all("idSel")) 
+if (selectedIndex!=0) {
+	// <!--**********Found*********-->
+var sValue=options[________].value;
+oDiv.style.color=sValue;
+}
+}
+</script>
+
+<!--**********Found*********-->
+<div id="________">请选择我的<b> color </b>属性的值。</div>
+<br>
+<!--**********Found*********-->
+<select id="idSel" ________="rdl_change();">
+<option value="none" style="font-weight:bold;">---请选择---
+<option value="scrollbar">scrollbar
+<option value="#F30">#F30
+<option value="rgb(50,250,240)">rgb(50,250,240)
+<option value="#AA9933">#AA9933
+<option value="saddlebrown">saddlebrown
+</select>
+</body>
+</html>

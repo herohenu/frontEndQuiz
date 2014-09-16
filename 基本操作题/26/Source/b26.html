@@ -1,0 +1,40 @@
+<html>
+<body>
+<script type="text/javascript">
+function getRadioValue(name){
+var radioes = document.getElementsByName(name); 
+for(var i=0;i<radioes.length;i++)
+{
+	 // <!--**********Found*********-->
+     if(radioes[i]==1){
+      return radioes[i].value;
+     }
+}
+return false;
+}
+</script>
+<form action="" method="get">
+  <p>
+    <label> 1.
+    <input type="radio" name="RadioGroup1" value="1">
+    </label>
+    <br>
+    <label> 2.
+    <input name="RadioGroup1" type="radio" value="2">
+    </label>
+    <br>
+    <label> 3.
+    <!--**********Found*********-->
+    <input type="radio" name="RadioGroup1" value="3" default>
+    </label>
+    <br>
+    <label> 4.
+    <input type="radio" name="RadioGroup1" value="4">
+    </label>
+    <br>
+  </p>
+  <!--**********Found*********-->
+  <input name="" type="button" onClick="alert(getRadioValue('radio'))" value="Ìá½»">
+</form>
+</body>
+</html>

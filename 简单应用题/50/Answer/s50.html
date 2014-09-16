@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/JavaScript">
+var t=1;
+function next() {
+	t++;
+	if (t>6) t=1;
+	// <!--**********Found*********-->
+	document.image.src="s50-"+t+".jpg";
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+	<!--**********Found*********-->
+	<img name="image" src="s50-1.jpg"/><br>
+	<!--**********Found*********-->
+	<input type="button" onclick="next()" value="обр╩уе" />
+</BODY>
+</HTML>

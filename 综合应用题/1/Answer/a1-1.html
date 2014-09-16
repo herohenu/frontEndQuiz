@@ -1,0 +1,37 @@
+<html>
+<body>
+<script type="text/javascript">
+function check(){
+	var name = document.getElementById('name'); 
+	var pass = document.getElementById('pass'); 
+	if(name.value == 'abc' && pass.value == '123') {
+		// <!--**********Found*********-->
+		document.form1.action='a1-2.html';
+		// <!--**********Found*********-->
+		document.form1.submit();
+	}
+	else if (name.value == 'aaa' && pass.value == '111') {
+		// <!--**********Found*********-->
+		location.href='a1-3.html';
+	}
+	else {
+		return false;
+	}
+}
+</script>
+<form name="form1" action="" method="get">
+  <p>
+    <label> ’À∫≈£∫
+    <input id="name" name="name" type="text">
+    </label>
+  </p>
+  <p>
+    <label> √‹¬Î£∫
+    <!--**********Found*********-->
+    <input type="password" id="pass" name="pass">
+    </label>
+  </p>
+  <input name="" type="button" onClick="check()" value="µ«¬º">
+</form>
+</body>
+</html>

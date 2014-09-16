@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript" language="javascript">
+function cal(){
+	// <!--**********Found*********-->
+	var value=document.form.txtInt.value;
+	// <!--**********Found*********-->
+	var n=parseInt(value);
+	
+	if (n%2==0) {
+		document.write(n+" / 2 = "+n/2+"<br>");
+		document.write(n+"不是素数");
+	}
+	else {
+		var i=3;
+		for (; i<n/2; i+=2) {
+			if (n%i == 0)	{
+				document.write(n+" / "+i+" = "+n/i+"<br>");
+				document.write(n+"不是素数");
+				break;
+			}
+		}
+		if (i>=n/2) {
+			document.write(n+"是素数");
+		}
+	}
+	document.write(" <A href='b31.html'>重新输入</A>");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="" method="get" name="form">
+ 请输入需要判断的正整数:<BR>
+ <!--**********Found*********-->
+ <INPUT name="txtInt" type="text"  maxlength="8">
+ <INPUT name="sub" type="button" value="计算"  onClick="cal()"><BR> 
+</FORM>
+</BODY>
+</HTML>

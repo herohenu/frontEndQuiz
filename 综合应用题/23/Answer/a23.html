@@ -1,0 +1,75 @@
+<html> 
+<head> 
+<script language="javascript"> 
+// --列头全选框被单击--- 
+function ChkAllClick(sonName, cbAllId){ 
+var arrSon = document.getElementsByName(sonName); 
+var cbAll = document.getElementById(cbAllId); 
+// <!--**********Found*********-->
+var tempState=cbAll.checked; 
+for(i=0;i<arrSon.length;i++) { 
+if(arrSon[i].checked!=tempState) 
+arrSon[i].click(); 
+} 
+} 
+
+// --子项复选框被单击--- 
+function ChkSonClick(sonName, cbAllId) { 
+var arrSon = document.getElementsByName(sonName); 
+var cbAll = document.getElementById(cbAllId); 
+for(var i=0; i<arrSon.length; i++) { 
+// <!--**********Found*********-->
+if(!arrSon[i].checked) { 
+cbAll.checked = false; 
+return; 
+} 
+} 
+cbAll.checked = true; 
+} 
+
+</script> 
+</head> 
+
+<body> 
+<form name="form1" method="post" action=""> 
+<table width="500" border="1"> 
+<tr bgcolor="#FFFF66"> 
+<td> 
+<!--**********Found*********-->
+<INPUT name="chkAll" id="chkAll" title="全选" onClick="ChkAllClick('chkSon','chkAll')" type="checkbox" />全选</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon1" type="checkbox" value='1' onclick="ChkSonClick('chkSon','chkAll')" />1</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon2" type="checkbox" value='2' onclick="ChkSonClick('chkSon','chkAll')" />2</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon3" type="checkbox" value='3' onclick="ChkSonClick('chkSon','chkAll')" />3</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon4" type="checkbox" value='4' onclick="ChkSonClick('chkSon','chkAll')" />4</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon5" type="checkbox" value='5' onclick="ChkSonClick('chkSon','chkAll')" />5</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon6" type="checkbox" value='6' onclick="ChkSonClick('chkSon','chkAll')" />6</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon7" type="checkbox" value='7' onclick="ChkSonClick('chkSon','chkAll')" />7</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon8" type="checkbox" value='8' onclick="ChkSonClick('chkSon','chkAll')" />8</td> 
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon9" type="checkbox" value='9' onclick="ChkSonClick('chkSon','chkAll')" />9</td> 
+
+</tr> 
+<tr> 
+<td><INPUT name="chkSon" id="chkSon10" type="checkbox" value='10' onclick="ChkSonClick('chkSon','chkAll')" />10</td> 
+</tr> 
+</table> 
+</form> 
+</body> 
+</html>

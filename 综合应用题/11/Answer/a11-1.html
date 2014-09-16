@@ -1,0 +1,121 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="mainpage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="tabs.css">
+<title>注册页面</title>
+</head>
+<body>
+<div id="content">
+<script language="javascript" type="text/javascript">
+function validateform(){
+	if(sNameCheck() && passCheck()) 
+	   return true;
+	 else
+	   return false;
+}
+
+function sNameCheck(){
+var sname = document.userfrm.sname.value;
+var illegalChars = /\W/;
+	if(sname.length != 0){
+		if(illegalChars.test(sname)){
+		alert("登录名无效");
+		document.userfrm.sname.select();
+		return false;
+		}
+	}
+	else{
+	alert("是否忘记输入登录名？");
+	document.userfrm.sname.focus();
+	return false
+	}
+	return true;
+}
+
+function passCheck(){
+var userpass = document.userfrm.pass.value;
+var ruserpass = document.userfrm.rpass.value;
+var illegalChars = /[\W_]/;// allow only charactors and numbers
+	// Check if Password field is blank.
+	if(userpass == "" || ruserpass == ""){
+		alert("未输入密码 \n" + "请输入密码");
+		document.userfrm.pass.focus();
+	return false;
+	}
+	// Check if password length is less than 6 charactor.
+	if(userpass.length < 6){
+		alert("密码必须多于或等于 6 个字符。\n");
+		document.userfrm.pass.focus();
+	return false;
+	}
+	//check if password contain illigal charactors.
+	else if(illegalChars.test(userpass)){
+		alert("密码包含非法字符");
+		document.userfrm.pass.select();
+		return false;
+	}
+	// <!--**********Found*********-->
+	else if(userpass != ruserpass){
+		alert("密码不符");
+		document.userfrm.rpass.select();
+		return false;
+	}
+	return true;
+}
+</script>
+
+<table width="800" border="0" align="center">
+  <tbody><tr>
+    <td height="75"><h2>用户注册</h2></td>
+    </tr>
+</tbody></table>
+
+<table width="800" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#99CCFF">
+	<!--**********Found*********-->
+ <form name="userfrm" method="post" action="a11-2.html" onsubmit="return validateform( )">
+  <tbody>
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#E7FBFF">登录名：</td>
+    <td align="left" bordercolor="#E7E3E7"> <input name="sname" type="text" class="register_textBroader" id="sname" size="24">
+（可包含 a-z、0-9 和下划线）</td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#E7FBFF">密码：</td>
+    <td align="left" bordercolor="#E7E3E7">
+    	<!--**********Found*********-->
+    	<input name="pass" type="password" class="register_textBroader" id="pass" size="26">
+			（至少包含 6 个字符）
+		</td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" height="0" align="right" bgcolor="#E7FBFF">再次输入密码：</td>
+    <td height="0" align="left" bordercolor="#E7E3E7">
+    	<!--**********Found*********-->
+    	<input name="rpass" type="password" class="register_textBroader" id="rpass" size="26">
+    </td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" height="35" align="right" bgcolor="#E7FBFF">
+        <input type="reset" name="Reset" value=" 重   填 "></td>
+    <td height="35" align="left" bordercolor="#E7E3E7">
+		<input type="submit" name="Button" value="同意以下服务条款，提交注册信息">
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2"><table width="760" border="0">
+      <tbody><tr>
+        <td height="36">
+			<h4><img src="read.gif" width="35" height="26">注册协议</h4>
+	    </td>
+      </tr>
+      <tr>
+        <td height="120">
+			<textarea name="textarea" cols="80" rows="6">欢迎阅读注册协议……</textarea>
+		</td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  
+</tbody></form></table>
+</div>
+</body></html>

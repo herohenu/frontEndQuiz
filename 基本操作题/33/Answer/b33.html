@@ -1,0 +1,49 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+/*
+计算方式：数量*单价+运费+运费险=合计
+*/
+function cal(){
+	var num= parseInt(document.myform.num.value);	
+	var price=parseFloat(document.myform.price.value);	
+	var cost=parseFloat(document.myform.cost.value);	
+	var cost2=parseFloat(document.myform.cost2.value);
+	var amount=num*price+cost+cost2;
+	document.myform.amount.value=amount;	
+}
+</script>
+</head>
+<body>
+	<!--**********Found*********-->
+<form action="" method="post" name="myform">
+<table width="215" height="266" border="1" bgcolor="#C8C8FF" align="center" cellpadding="0" cellspacing="0">
+  <tbody>
+  <tr>
+    <th colspan="2">订单金额计算器</th>
+  </tr>
+  <tr align="center">
+    <td>数量(件)</td>
+    <td><input type="text" name="num" size="10"></td>
+  </tr>
+  <tr align="center">
+    <td>单价(元)</td>
+    <td><input type="text" name="price" size="10"></td>
+  </tr>
+  <tr align="center">
+    <td>运费(元)</td>
+    <td><input type="text" name="cost" size="10"></td>
+  </tr>
+  <tr align="center">
+    <td>运费险(元)</td>
+    <td><input type="text" name="cost2" size="10"></td>
+  </tr>
+  <tr align="center">
+  	<!--**********Found*********-->
+    <td><input name="button2" type="button" value="合计" onclick="cal()"></td>
+    <td><input type="text" name="amount" size="10">元</td>
+  </tr>
+	</tbody>
+</table>
+</form>
+</body></html>

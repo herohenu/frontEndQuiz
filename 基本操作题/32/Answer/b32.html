@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript" language="javascript">
+function create(){
+	var x=parseInt(document.form.x.value);
+	var y=parseInt(document.form.y.value);
+	
+	// <!--**********Found*********-->
+	if (x<1 || x>10 || y<1 || y>10)
+	{
+		alert("行列数必须在1~10之间！");
+		return;
+	}
+	
+	// <!--**********Found*********-->
+	document.write("<style type='text/css'>td {width:30px; height:30px;}</style>");
+  document.write("<table border='1'>");
+  
+  // <!--**********Found*********-->
+	for (var i = 0; i < x; i++)
+	{
+		document.write("<tr>");
+		// <!--**********Found*********-->
+		for (var j = 0; j < y; j++)
+		{
+			document.write("<td>&nbsp;</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	document.write(" <A href='b32.html'>重新输入</A>");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="" method="get" name="form">
+ 请输入行数:
+ <INPUT name="x" type="text"  maxlength="2"><BR>
+ 请输入列数:
+ <INPUT name="y" type="text"  maxlength="2"><BR>
+ <INPUT name="sub" type="button" value="创建表格"  onClick="create()"><BR> 
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,41 @@
+<html>
+<body>
+<script type="text/javascript">
+function getGroupValues(name){
+var Group1 = document.getElementsByName(name); 
+var result = "";
+for(var i=0;i<Group1.length;i++)
+{
+	 // <!--**********Found*********-->
+     if(Group1[i].checked){
+      result=result+Group1[i].value+",";
+     }
+}
+     return result;
+}
+</script>
+<form action="" method="get">
+  <p>
+    <label> a.
+    <input type="checkbox" name="Group1" value="a">
+    </label>
+    <br>
+    <label> b.
+    <input name="Group1" type="checkbox" value="b">
+    </label>
+    <br>
+    <label> c.
+    <!--**********Found*********-->
+    <input type="checkbox" name="Group1" value="c" checked>
+    </label>
+    <br>
+    <label> d.
+    <input type="checkbox" name="Group1" value="d">
+    </label>
+    <br>
+  </p>
+  <!--**********Found*********-->
+  <input name="" type="button" onClick="alert(getGroupValues('Group1'))" value="Ìá½»">
+</form>
+</body>
+</html>

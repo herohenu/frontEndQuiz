@@ -1,0 +1,146 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="mainpage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="tabs.css">
+<title>修改用户资料</title>
+</head>
+<body>
+<div id="content">
+<script language="javascript" type="text/javascript">
+function validateform(){
+	if(emailcheck() && bdaycheck()) 
+	   return true;
+	 else
+	   return false;
+}
+
+function emailcheck(){
+var usermail = document.userfrm.email.value;
+
+	if(usermail.length == "0"){
+	alert("Email 文本框为空")
+	document.userfrm.email.focus();
+	return false;
+	}
+	if(	usermail.indexOf("@") < 0 || usermail.indexOf(".") < 0 || usermail.indexOf("@") > usermail.indexOf(".")){
+	
+	  alert("Email 地址无效");
+	  return false;
+	}
+	return true;
+}
+
+function bdaycheck(){
+// <!--**********Found*********-->
+var bmonth = document.userfrm.________.value;
+// <!--**********Found*********-->
+var bday = document.userfrm.________.value;
+// <!--**********Found*********-->
+var byear = document.userfrm.________.value;
+	if(bmonth == "" || bday == "" || byear == "" || bday=="dd" || byear == "yyyy"){
+		alert("请输入您的生日");
+		document.userfrm.bmon.focus();
+		return false;
+	}
+	
+	for(i=0; i<bday.length; i++){
+	var bnum = bday.substring(i,i+1)
+		if(!(bnum < 9 || bnum > 0)){
+		alert("生日无效");
+		document.userfrm.bday.focus();
+		return false;
+		}
+	}
+
+	for(j=0; j<byear.length; j++){
+	var bynum = byear.substring(j,j+1)
+		if(!(bynum < 9 || bynum > 0)){
+		alert("生日无效");
+		document.userfrm.byear.focus();
+		return false;
+		}
+	}
+	 //验证出生年月日是否在指定的范围内
+   if (byear<1900||byear>2120){  
+		alert("您输入的出生年份超出范围！\n请重新输入！");
+		document.userfrm.byear.focus();
+		return(false);
+			}
+		else 
+			if(bmonth<0||bmonth>12){
+			 alert("您输入的月份超出范围！\n请重新输入！");
+			 document.userfrm.bmon.focus();
+			 return(false);
+			}
+			else 
+				if(bday<0||bday>31){
+				 alert("您输入的日期超出范围!\n请重新输入！");
+				 return(false);
+				}
+			
+	     return true;
+}
+
+</script>
+<table width="550" border="0" align="center">
+  <tbody><tr>
+    <td height="75"><h2>修改用户资料</h2></td>
+    </tr>
+</tbody></table>
+<table width="550" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#99CCFF">
+	<!--**********Found*********-->
+ <form name="userfrm" method="post" action="a16-2.html" ________="return validateform( )">
+  <tbody>
+  <tr class="register_table_line">
+    <td width="160" height="0" align="right" bgcolor="#FBFFE7">电子邮箱：</td>
+    <td height="0" align="left" bordercolor="#E7E3E7"><input name="email" type="text" class="register_textBroader" id="email" size="24">（必须包含 @  字符）</td>
+  </tr>  
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#FBFFE7">爱好：</td>
+    <td align="left" bordercolor="#E7E3E7">
+	  <label>
+	  	<input type="checkbox" name="checkbox" value="checkbox">
+	  </label>
+		  运动&nbsp;&nbsp;
+	  <label>
+	  <input type="checkbox" name="checkbox2" value="checkbox">
+	  </label>
+		聊天&nbsp;&nbsp;
+	  <label>
+		<input type="checkbox" name="checkbox22" value="checkbox">
+	  </label>
+		玩游戏
+	</td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" align="right" bgcolor="#FBFFE7">出生日期：</td>
+    <td align="left" bordercolor="#E7E3E7">
+		<input name="byear" class="register_textBroader" id="byear" onfocus="this.value=''" value="yyyy" size="4" maxlength="4">&nbsp;年&nbsp;&nbsp;
+		   <select name="bmon">
+			<option value="" selected="">[选择月份]
+		     </option><option value="0">一月
+		     </option><option value="1">二月
+		     </option><option value="2">三月
+		     </option><option value="3">四月
+		     </option><option value="4">五月
+		     </option><option value="5">六月
+		     </option><option value="6">七月
+		     </option><option value="7">八月
+		     </option><option value="8">九月
+		     </option><option value="9">十月
+		     </option><option value="10">十一月
+		     </option><option value="11">十二月 
+		  </option></select>&nbsp;月&nbsp;&nbsp;
+		  <input name="bday" class="register_textBroader" id="bday" onfocus="this.value=''" value="dd" size="2" maxlength="2">日 
+	</td>
+  </tr>
+  <tr class="register_table_line">
+    <td width="160" height="35" align="right" bgcolor="#FBFFE7">
+        <input type="reset" name="Reset" value=" 重   填 "></td>
+    <td height="35" align="left" bordercolor="#E7E3E7">
+		<input type="submit" name="Button" value=" 提   交 ">
+	</td>
+  </tr>
+</tbody></form></table>
+</div>
+</body></html>
